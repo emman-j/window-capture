@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.9.12105.275 stable
+VisualStudioVersion = 18.9.12105.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureWindow-Winforms", "CaptureWindow-Winforms\CaptureWindow-Winforms\CaptureWindow-Winforms.csproj", "{C324A64F-CFCF-4A09-8151-93D82179F9D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureWindow-WPF", "CaptureWindow-WPF\CaptureWindow-WPF\CaptureWindow-WPF.csproj", "{0A9E208D-D2A7-4866-91D1-3EF570245C03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowCapture.Core", "WindowCapture.Core\WindowCapture.Core.csproj", "{6E2B7590-0E45-4316-A721-C54882FF1910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowCapture.WinForms", "WindowCapture.WinForms\WindowCapture.WinForms.csproj", "{8728A25C-C1F4-4858-8539-F34B1C488638}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowCapture.WPF", "WindowCapture.WPF\WindowCapture.WPF.csproj", "{EA529E85-3B6C-4E4E-A99C-6F357A409A24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{0A9E208D-D2A7-4866-91D1-3EF570245C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A9E208D-D2A7-4866-91D1-3EF570245C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A9E208D-D2A7-4866-91D1-3EF570245C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E2B7590-0E45-4316-A721-C54882FF1910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E2B7590-0E45-4316-A721-C54882FF1910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E2B7590-0E45-4316-A721-C54882FF1910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E2B7590-0E45-4316-A721-C54882FF1910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8728A25C-C1F4-4858-8539-F34B1C488638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8728A25C-C1F4-4858-8539-F34B1C488638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8728A25C-C1F4-4858-8539-F34B1C488638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8728A25C-C1F4-4858-8539-F34B1C488638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA529E85-3B6C-4E4E-A99C-6F357A409A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA529E85-3B6C-4E4E-A99C-6F357A409A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA529E85-3B6C-4E4E-A99C-6F357A409A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA529E85-3B6C-4E4E-A99C-6F357A409A24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

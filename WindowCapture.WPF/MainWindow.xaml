@@ -1,0 +1,85 @@
+﻿<Window x:Class="WindowCapture.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowCapture.WPF"
+        mc:Ignorable="d"
+        Title="Window Capture"
+        Height="600" Width="900"
+        Closing="Window_Closing">
+
+    <DockPanel>
+
+        <!-- Menu bar -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Menu">
+                <MenuItem Header="_Open App"        Click="OpenApp_Click"/>
+                <Separator/>
+                <MenuItem Header="_Exit"            Click="Exit_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="_Dock">
+                <MenuItem Header="_Open App"        Click="OpenApp_Click"/>
+                <MenuItem Header="_Dock Open App"   Click="DockOpenApp_Click"/>
+                <Separator/>
+                <MenuItem Header="_Undock App"      Click="UndockApp_Click"/>
+                <MenuItem Header="Undock _All"      Click="UndockAll_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Rename Tab"      Click="RenameTab_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="Docking _Mode">
+                <MenuItem x:Name="TabModeMenuItem"
+                          Header="_Tabs Mode"
+                          IsCheckable="True"
+                          IsChecked="True"
+                          Click="DockingMode_Click"/>
+                <MenuItem x:Name="WindowModeMenuItem"
+                          Header="_Windows Mode"
+                          IsCheckable="True"
+                          Click="DockingMode_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- Content area — switches between Tab and Window mode -->
+        <Grid x:Name="ContentGrid">
+
+            <!-- ═══ TAB MODE ═══ -->
+            <TabControl x:Name="MainTabControl"
+                        x:FieldModifier="private"
+                        SelectionChanged="MainTabControl_SelectionChanged"
+                        Visibility="Visible"/>
+
+            <!-- ═══ WINDOW MODE ═══ -->
+            <Grid x:Name="WindowModeGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Sidebar: list of open child windows -->
+                <DockPanel Grid.Column="0">
+                    <TextBlock DockPanel.Dock="Top"
+                               Text="Windows"
+                               Margin="6,6,0,4"/>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="WindowSidebarPanel"/>
+                    </ScrollViewer>
+                </DockPanel>
+
+                <!-- Canvas hosts the free-floating child windows -->
+                <Border Grid.Column="1"
+                        BorderThickness="1,0,0,0"
+                        BorderBrush="{DynamicResource SystemControlForegroundBaseMediumLowBrush}">
+                    <Canvas x:Name="WindowCanvas"
+                            ClipToBounds="True"
+                            SizeChanged="WindowCanvas_SizeChanged"/>
+                </Border>
+            </Grid>
+
+        </Grid>
+    </DockPanel>
+</Window>
